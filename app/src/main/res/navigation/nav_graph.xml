@@ -34,5 +34,8 @@
         <argument
             android:name="nationality"
             app:argType="string" />
+        <argument
+            android:name="distance"
+            app:argType="integer" />
     </fragment>
 </navigation>

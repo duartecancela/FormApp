@@ -22,11 +22,13 @@ class ResultFragment : Fragment() {
 
         val personName = args.personName
         val nationality =args.nationality
+        val distance =args.distance
 
         this.binding = FragmentResultBinding.inflate(inflater)
 
         this.binding.textViewPersonName.text = personName
         this.binding.textViewNationality.text = nationality
+        this.binding.textViewDistance.text = distance.toString()
 
         this.binding.buttonBack.setOnClickListener {
             findNavController().popBackStack(R.id.startFragment, false)

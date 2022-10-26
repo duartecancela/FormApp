@@ -1,19 +1,16 @@
 package pt.ipbeja.formapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Toast
-import androidx.core.view.get
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.coroutines.NonDisposableHandle.parent
 import pt.ipbeja.formapp.databinding.FragmentFormBinding
-import kotlin.math.absoluteValue
+import java.util.*
 
 class FormFragment : Fragment() {
 
@@ -26,41 +23,32 @@ class FormFragment : Fragment() {
 
         this.binding = FragmentFormBinding.inflate(inflater)
 
-        val name = this.binding.editTextPersonName.text
-        var nationality : String? = null
-
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        this.activity?.let {
-            ArrayAdapter.createFromResource(
-                it.applicationContext,
-                R.array.nationality,
-                android.R.layout.simple_spinner_item
-            ).also { adapter ->
-                // Specify the layout to use when the list of choices appears
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                // Apply the adapter to the spinner
-                this.binding.spinnerNationality.adapter = adapter
-            }
+        with(binding.numberPickerDistance) {
+            minValue = 0
+            maxValue = 5000
         }
 
-        // when spinner is selected
-        this.binding.spinnerNationality.onItemSelectedListener = object :
-        AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                nationality = binding.spinnerNationality.getItemAtPosition(p2).toString()
-                Toast.makeText(activity,nationality, Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-
-        }
+        val datePicker = this.binding.datePicker
+        val day = datePicker.dayOfMonth
+        val month = datePicker.month + 1
+        val year = datePicker.year
 
         this.binding.buttonResult.setOnClickListener {
+
+            val personName = this.binding.editTextPersonName.text
+            val nationality = binding.spinnerNationality.selectedItem as String
+            val distance = binding.numberPickerDistance.value
+
+            val date = Calendar.getInstance().run {
+                set(Calendar.DAY_OF_MONTH, binding.datePicker.dayOfMonth)
+                set(Calendar.MONTH, binding.datePicker.month)
+                set(Calendar.YEAR, binding.datePicker.year)
+                time
+            }
+
             findNavController()
                 .navigate(FormFragmentDirections
-                    .actionFormFragmentToResultFragment(name.toString(), nationality.toString()))
+                    .actionFormFragmentToResultFragment(personName.toString(), nationality, distance))
         }
 
         // Inflate the layout for this fragment

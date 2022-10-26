@@ -53,6 +53,26 @@
             android:textSize="16sp"
             tools:text="@string/text_view_nationality" />
 
+        <TextView
+            android:id="@+id/textViewLabelDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_view_label_distance"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textViewDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            tools:text="@string/text_view_distance" />
+
         <Button
             android:id="@+id/buttonBack"
             android:layout_width="match_parent"

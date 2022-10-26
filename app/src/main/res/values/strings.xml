@@ -10,6 +10,8 @@
     <string name="text_view_label_person_name">Name</string>
     <string name="text_view_label_nationality">Nationality</string>
     <string name="text_view_nationality">Nationality</string>
+    <string name="text_view_label_distance">Distance</string>
+    <string name="text_view_distance">Distance</string>
     <string-array name="nationality">
         <item>Portuguese</item>
         <item>English</item>
