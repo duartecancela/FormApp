@@ -48,7 +48,7 @@ class FormFragment : Fragment() {
 
             findNavController()
                 .navigate(FormFragmentDirections
-                    .actionFormFragmentToResultFragment(personName.toString(), nationality, distance))
+                    .actionFormFragmentToResultFragment(personName.toString(), nationality, distance, date.))
         }
 
         // Inflate the layout for this fragment

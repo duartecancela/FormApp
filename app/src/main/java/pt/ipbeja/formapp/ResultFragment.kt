@@ -21,14 +21,16 @@ class ResultFragment : Fragment() {
     ): View? {
 
         val personName = args.personName
-        val nationality =args.nationality
-        val distance =args.distance
+        val nationality = args.nationality
+        val distance = args.distance
+        val date = args.date
 
         this.binding = FragmentResultBinding.inflate(inflater)
 
         this.binding.textViewPersonName.text = personName
         this.binding.textViewNationality.text = nationality
         this.binding.textViewDistance.text = distance.toString()
+        this.binding.textViewDate.text = date.toString()
 
         this.binding.buttonBack.setOnClickListener {
             findNavController().popBackStack(R.id.startFragment, false)

@@ -73,6 +73,26 @@
             android:textSize="16sp"
             tools:text="@string/text_view_distance" />
 
+        <TextView
+            android:id="@+id/textViewLabelDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_view_label_date"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            tools:text="@string/text_view_date" />
+
         <Button
             android:id="@+id/buttonBack"
             android:layout_width="match_parent"
