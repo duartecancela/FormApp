@@ -29,9 +29,6 @@ class FormFragment : Fragment() {
         }
 
         val datePicker = this.binding.datePicker
-        val day = datePicker.dayOfMonth
-        val month = datePicker.month + 1
-        val year = datePicker.year
 
         this.binding.buttonResult.setOnClickListener {
 
@@ -48,7 +45,7 @@ class FormFragment : Fragment() {
 
             findNavController()
                 .navigate(FormFragmentDirections
-                    .actionFormFragmentToResultFragment(personName.toString(), nationality, distance, date.))
+                    .actionFormFragmentToResultFragment(personName.toString(), nationality, distance, date))
         }
 
         // Inflate the layout for this fragment

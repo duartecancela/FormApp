@@ -1,6 +1,7 @@
 package pt.ipbeja.formapp
 
 import android.os.Bundle
+import android.text.format.DateFormat
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,23 +15,25 @@ class ResultFragment : Fragment() {
 
     private lateinit var binding : FragmentResultBinding
     private val args: ResultFragmentArgs by navArgs()
+    private val dateFormat = "dd/MM/yyyy"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        val dateFormated = DateFormat.format(dateFormat, args.date)
+
         val personName = args.personName
         val nationality = args.nationality
         val distance = args.distance
-        val date = args.date
 
         this.binding = FragmentResultBinding.inflate(inflater)
 
         this.binding.textViewPersonName.text = personName
         this.binding.textViewNationality.text = nationality
         this.binding.textViewDistance.text = distance.toString()
-        this.binding.textViewDate.text = date.toString()
+        this.binding.textViewDate.text = dateFormated.toString()
 
         this.binding.buttonBack.setOnClickListener {
             findNavController().popBackStack(R.id.startFragment, false)
