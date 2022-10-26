@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import pt.ipbeja.formapp.databinding.FragmentFormBinding
+import kotlin.math.absoluteValue
 
 class FormFragment : Fragment() {
 
@@ -18,6 +19,7 @@ class FormFragment : Fragment() {
     ): View? {
 
         this.binding = FragmentFormBinding.inflate(inflater)
+
 
         this.binding.buttonResult.setOnClickListener {
             findNavController().navigate(FormFragmentDirections.actionFormFragmentToResultFragment())
