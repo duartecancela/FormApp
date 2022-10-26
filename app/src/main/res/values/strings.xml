@@ -5,8 +5,11 @@
     <string name="button_start">Start</string>
     <string name="edit_text_person_name">Insert name</string>
     <string name="button_result">Result</string>
-    <string name="buttonBack">Back</string>
+    <string name="buttonBack">Back to Start</string>
     <string name="text_view_person_name">Name</string>
+    <string name="text_view_label_person_name">Name</string>
+    <string name="text_view_label_nationality">Nationality</string>
+    <string name="text_view_nationality">Nationality</string>
     <string-array name="nationality">
         <item>Portuguese</item>
         <item>English</item>
